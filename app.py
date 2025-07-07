@@ -60,7 +60,7 @@ if uploaded_file:
             st.text_area("Extracted Ingredients", extracted_text, height=150)
 
             if extracted_text.strip():
-                st.info("💡 Analyzing ingredients with local LLM...")
+                st.info(" Analyzing ingredients with local LLM...")
 
                 prompt = f"""
                 Here is a list of food ingredients extracted from a package:
