@@ -8,12 +8,12 @@ import easyocr
 import ollama
 
 # --- SETUP ---
-MODEL_PATH = r"C:\Minor_Git\Minor-Project\runscopy\detect\train4\weights\best.pt"  # Update with your trained model path
+MODEL_PATH = r"C:\Minor_Git\Minor-Project\runscopy\detect\train4\weights\best.pt"  
 model = YOLO(MODEL_PATH)
 ocr_reader = easyocr.Reader(["en"], gpu=False)
 
 st.set_page_config(page_title="Ingredient Analyzer", layout="centered")
-st.title("🧪 Ingredient Health Analyzer")
+st.title(" Ingredient Health Analyzer")
 
 st.markdown("""
 1. Upload a **food package image**  
@@ -21,7 +21,7 @@ st.markdown("""
 3. The local LLM analyzes health impacts and returns suggestions  
 """)
 
-# --- Local LLM helper ---
+# --- Local LLM ---
 def call_local_llm(prompt):
     response = ollama.chat(
         model="mistral",
@@ -70,7 +70,7 @@ if uploaded_file:
                 Analyze this list and tell if the product is healthy or not. Mention any harmful ingredients, possible long-term health impacts, and suggest healthier alternatives if needed. Your response should be clear and easy to understand for general users. Rate the overall healthiness of the product on a scale of 1 to 10, where 1 is very unhealthy and 10 is very healthy.
                 """
                 analysis = call_local_llm(prompt)
-                st.markdown("### 🧠 Health Analysis")
+                st.markdown("Health Analysis")
                 st.write(analysis)
 
             else:
