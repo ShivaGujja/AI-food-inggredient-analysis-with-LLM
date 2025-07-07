@@ -1,0 +1,5 @@
+train: /content/drive/MyDrive/Ingredients_Analysis/data/images/train
+val: /content/drive/MyDrive/Ingredients_Analysis/data/images/val
+
+nc: 2
+names: ['ING_Table','ING_List']
