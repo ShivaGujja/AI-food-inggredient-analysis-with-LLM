@@ -75,3 +75,4 @@ if uploaded_file:
 
             else:
                 st.warning("No text found in the detected region.")
+        # Clean up temporary files
